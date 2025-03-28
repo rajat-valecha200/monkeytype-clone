@@ -21,9 +21,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(morgan('dev'));
 
 // Replace simple cors() with this configured version
+const allowedOrigins = [
+  'http://localhost:3000', // Local dev
+  'https://monkeytype-clone-tau.vercel.app/'
+];
+
 app.use(cors({
-  origin: 'http://localhost:3000', // Your frontend origin
-  credentials: true // Allow credentials (cookies, auth headers)
+  origin: allowedOrigins,
+  credentials: true // Now works since origin isn't '*'
 }));
 app.use((req, res, next) => {
   res.header('Access-Control-Allow-Credentials', true);
