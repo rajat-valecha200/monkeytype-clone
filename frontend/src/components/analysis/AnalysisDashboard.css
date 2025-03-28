@@ -1,0 +1,129 @@
+.analysis-dashboard {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .analysis-dashboard h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+  }
+  
+  .session-history {
+    margin-bottom: 3rem;
+  }
+  
+  .session-history h3 {
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .session-history ul {
+    list-style: none;
+  }
+  
+  .session-history li {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .session-history li:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .session-history li.active {
+    background-color: #e3f2fd;
+    border-left: 4px solid #2196F3;
+  }
+  
+  .analysis-results {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  @media (min-width: 992px) {
+    .analysis-results {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+  .chart-container {
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+  }
+  
+  .chart-container h3 {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #333;
+  }
+  
+  .insights {
+    padding: 1.5rem;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    grid-column: 1 / -1;
+  }
+  
+  .insights h3 {
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #333;
+  }
+  
+  .insight-item {
+    margin-bottom: 0.5rem;
+    padding: 0.5rem;
+    background-color: white;
+    border-radius: 4px;
+  }
+
+  .error-message {
+    color: #f44336;
+    background-color: #ffebee;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .chart-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .insights {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .insight-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 4px;
+  }
