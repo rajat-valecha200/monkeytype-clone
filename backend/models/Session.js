@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+
 const sessionSchema = new mongoose.Schema({
   userId: {
     type: mongoose.Schema.Types.ObjectId,
@@ -32,11 +33,24 @@ const sessionSchema = new mongoose.Schema({
   duration: {
     type: Number,
     required: true,
-    enum: [15, 30], // Only allows 15 or 30
-    default: 30 // Default value if none provided
+    enum: [15, 30],
+    default: 30
   },
   createdAt: {
     type: Date,
     default: Date.now
   }
 });
+
+// Add indexes for better query performance
+sessionSchema.index({ userId: 1 });
+sessionSchema.index({ createdAt: -1 });
+
+// Add instance methods if needed
+sessionSchema.methods.getPerformanceCategory = function() {
+  return this.wpm > 70 ? 'Fast' : this.wpm < 40 ? 'Careful' : 'Balanced';
+};
+
+// Export the model properly
+const Session = mongoose.model('Session', sessionSchema);
+module.exports = Session;
